@@ -44,7 +44,15 @@ in a row.)*/
  LEFT OUTER JOIN orders
  ON customers.id = orders.customer_id
  GROUP BY customers.id
- ORDER BY orders.price DESC;
+ /* I believe that there was a mistake. total had been created in the SELECT statement, but never utilized.
+      
+      The line below previously read:
+      ORDER BY orders.price DESC;
+      
+      When it should have read:
+      ORDER BY total DESC;
+ */
+ ORDER BY total DESC;
 
 
 
